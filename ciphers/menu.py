@@ -1,5 +1,9 @@
+from typing import Literal
+
+RotType = Literal['rot13', 'rot47']
+
 class Menu:
-    CIPHER_TYPES = {
+    CIPHER_TYPES: dict[str, tuple[RotType, str]] = {
         "1": ("rot13", "ROT13"),
         "2": ("rot47", "ROT47"),
     }
@@ -13,7 +17,7 @@ class Menu:
     }
 
     @staticmethod
-    def show():
+    def show() -> None:
         print("\n=== Witaj w Menu programu Cipher ===")
         print("1. Wczytaj dane z pliku")
         print("2. Zaszyfruj tekst")
@@ -32,7 +36,7 @@ class Menu:
         return cls.get_choice()
 
     @classmethod
-    def choose_cipher(cls):
+    def choose_cipher(cls) -> RotType:
         print("\nWybierz szyfr:")
 
         for key, (_, display_name) in cls.CIPHER_TYPES.items():

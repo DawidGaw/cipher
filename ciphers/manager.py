@@ -9,7 +9,7 @@ class Manager:
         self.buffer = buffer
         self.menu = menu
 
-    def run(self):
+    def run(self) -> None:
         while True:
             choice = self.menu.get_choice()
             match choice:
@@ -29,7 +29,7 @@ class Manager:
                 case _:
                     raise ValueError(f"Podano błędną opcję")
 
-    def encrypt_flow(self):
+    def encrypt_flow(self) -> None:
         text = input("Wprowadź tekst do zakodowania: ").strip()
 
         rot_type = self.menu.choose_cipher()
@@ -42,7 +42,7 @@ class Manager:
 
         print(f"Zakodowano: {encrypted}")
 
-    def decrypt_flow(self):
+    def decrypt_flow(self) -> None:
         text = input("Wprowadź tekst do dekodowania: ").strip()
 
         rot_type = self.menu.choose_cipher()
@@ -55,7 +55,7 @@ class Manager:
 
         print(f"Dekodowano: {decrypted}")
 
-    def load_from_file(self):
+    def load_from_file(self) -> None:
         filename = input("Plik do wczytania: ").strip()
         items = FileHandler.read_file(filename)
 
@@ -67,11 +67,11 @@ class Manager:
 
         print(f"Wczytano plik!")
 
-    def save_to_file(self):
+    def save_to_file(self) -> None:
         filename = input("Plik do zapisania: ").strip()
         FileHandler.write_file(filename, self.buffer.all())
 
-    def show_buffer(self):
+    def show_buffer(self) -> None:
         print("Zawartość Buffera")
         for item in self.buffer.all():
             print(item)

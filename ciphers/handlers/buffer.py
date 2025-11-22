@@ -21,9 +21,9 @@ class Buffer:
     def data_as_list_of_dicts(self) -> List[Dict]:
         return [asdict(item) for item in self._data]
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"Buffer(data={self._data})"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return "\n".join(str(item) for item in self._data)
 

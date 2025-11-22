@@ -2,7 +2,7 @@ from .rot import Rot
 
 class Rot13(Rot):
     @staticmethod
-    def _cipher(text):
+    def _cipher(text: str) -> list[str]:
         result = []
         for char in text:
             if "A" <= char <= "Z":
