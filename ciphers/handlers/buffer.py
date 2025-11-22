@@ -1,6 +1,8 @@
 from dataclasses import asdict
-from typing import List, Dict
+from typing import Dict, List
+
 from ciphers.models.text import Text
+
 
 class Buffer:
     def __init__(self) -> None:
@@ -14,7 +16,6 @@ class Buffer:
         for text in texts:
             self.add(text)
 
-
     def all(self) -> List[Text]:
         return self._data
 
@@ -26,4 +27,3 @@ class Buffer:
 
     def __str__(self) -> str:
         return "\n".join(str(item) for item in self._data)
-

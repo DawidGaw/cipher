@@ -1,5 +1,6 @@
 from .rot import Rot
 
+
 class Rot47(Rot):
     @staticmethod
     def encrypt(text: str) -> str:
@@ -15,6 +16,3 @@ class Rot47(Rot):
     @staticmethod
     def decrypt(text: str) -> str:
         return Rot47.encrypt(text)
-
-
-

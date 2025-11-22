@@ -1,6 +1,7 @@
 from typing import Literal
 
-RotType = Literal['rot13', 'rot47']
+RotType = Literal["rot13", "rot47"]
+
 
 class Menu:
     CIPHER_TYPES: dict[str, tuple[RotType, str]] = {
@@ -13,7 +14,7 @@ class Menu:
         "3": "Decrypt_text",
         "4": "Show_buffer",
         "5": "Save_file",
-        "6": "Exit"
+        "6": "Exit",
     }
 
     @staticmethod
@@ -27,12 +28,12 @@ class Menu:
         print("6. Wyjście")
 
     @classmethod
-    def get_choice(cls)-> str:
+    def get_choice(cls) -> str:
         cls.show()
         choice = input("\n Wybierz opcję: ").strip()
         if choice in cls.options:
             return cls.options[choice]
-        print(f"Niepoprawna opcja. Spróbuj jeszcze raz")
+        print("Niepoprawna opcja. Spróbuj jeszcze raz")
         return cls.get_choice()
 
     @classmethod
@@ -49,4 +50,3 @@ class Menu:
         else:
             print(f"Podany szyfr: {choice} nie istnieje")
             return Menu.choose_cipher()
-

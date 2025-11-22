@@ -1,8 +1,10 @@
-from .menu import Menu
 from ciphers.handlers.buffer import Buffer
-from .factory import CipherFactory
 from ciphers.handlers.file_handler import FileHandler
+
+from .factory import CipherFactory
+from .menu import Menu
 from .models.text import Text
+
 
 class Manager:
     def __init__(self, buffer: Buffer, menu: Menu):
@@ -24,10 +26,10 @@ class Manager:
                 case "Save_file":
                     self.save_to_file()
                 case "Exit":
-                    print(f"Goodbye")
+                    print("Goodbye")
                     break
                 case _:
-                    raise ValueError(f"Podano błędną opcję")
+                    raise ValueError("Podano błędną opcję")
 
     def encrypt_flow(self) -> None:
         text = input("Wprowadź tekst do zakodowania: ").strip()
@@ -65,7 +67,7 @@ class Manager:
 
         self.buffer.add_bulk(items)
 
-        print(f"Wczytano plik!")
+        print("Wczytano plik!")
 
     def save_to_file(self) -> None:
         filename = input("Plik do zapisania: ").strip()
@@ -75,14 +77,3 @@ class Manager:
         print("Zawartość Buffera")
         for item in self.buffer.all():
             print(item)
-
-
-
-
-
-
-
-
-
-
-

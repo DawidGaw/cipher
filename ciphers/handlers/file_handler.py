@@ -1,8 +1,10 @@
 import json
 import os
-from typing import List
 from dataclasses import asdict
+from typing import List
+
 from ciphers.models.text import Text
+
 
 class FileHandler:
     @staticmethod
@@ -38,5 +40,3 @@ class FileHandler:
     @staticmethod
     def file_exists(filename: str) -> bool:
         return os.path.exists(filename)
-
-
