@@ -30,7 +30,7 @@ jobs:
       run: ruff check ciphers
 
     - name: Run mypy
-      run: run mypy --config-file pyproject.toml
+      run: mypy --config-file pyproject.toml
 
     - name: Run bandit
       run: bandit -r ciphers
