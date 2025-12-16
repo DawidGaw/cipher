@@ -3,7 +3,7 @@ from .rot import Rot
 
 class Rot47(Rot):
     @staticmethod
-    def encrypt(text: str) -> str:
+    def _cipher(text: str) -> str:
         result = []
         for char in text:
             ascii_code = ord(char)
@@ -14,5 +14,9 @@ class Rot47(Rot):
         return "".join(result)
 
     @staticmethod
+    def encrypt(text: str) -> str:
+        return Rot47._cipher(text)
+
+    @staticmethod
     def decrypt(text: str) -> str:
-        return Rot47.encrypt(text)
+        return Rot47._cipher(text)
